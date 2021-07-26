@@ -13,3 +13,7 @@ This project predicts the fare amount (inclusive of tolls) for a taxi ride in Ne
 * [Scikit-learn](https://scikit-learn.org/stable/)
 * [Postgres](https://www.postgresql.org/)
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+
+## Machine Learning Pipeline
+
+![Ml Pipeline](/Pipeline.png)
