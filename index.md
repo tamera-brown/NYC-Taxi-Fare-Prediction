@@ -43,12 +43,7 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 ![Missing Data](nulls.png) 
 
 
-### Fare Outlier Removal
-
-![fare amount before](fare amount before.png)  ![fare amount after](fare amount after.png)
-
-
-#### Calulate Distance
+#### Harversine Formula
 
     `from haversine import haversine
     
@@ -62,6 +57,13 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
     	pick_up = (a1, b1) 
     	drop_off = (a2, b2)
     	return round(haversine(pick_up, drop_off,unit='mi'),2)`
+	
+
+### Fare Outlier Removal
+
+![fare amount before](fare amount before.png)  ![fare amount after](fare amount after.png)
+
+
 
 ### Distance Outlier Removal
 
