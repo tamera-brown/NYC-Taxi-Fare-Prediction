@@ -22,18 +22,18 @@ This project predicts the fare amount (inclusive of tolls) for a taxi ride in Ne
 
   
 
-## Data
-
-This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/overview) which contains 55M rows spanning over 7 years (2009-2015). I worked with the subset of that data with the year 2014, which has 8M rows.
-
-
 
 ## Machine Learning Pipeline
 
 ![Pipeline](Pipeline.png)
 
 
+## Data
 
+This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/overview) which contains 55M rows spanning over 7 years (2009-2015). I worked with the subset of that data with the year 2014, which has 8M rows.
+
+
+## EDA
 
 
 ### Fare Outlier Removal
@@ -60,18 +60,28 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 ![distance before](distance before.png)  ![distance after](distance after.png)
 
 
+## Feature Engineering
 
-
-
-
-
-	`nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].str.replace(" UTC", "")
-	nycfare_2014_df.pickup_datetime=pd.to_datetime(nycfare_2014_df.pickup_datetime,format='%Y-%m-%d %H:%M:%S')
-	nycfare_2014_df['key'] = nycfare_2014_df['key'].str.replace(" UTC", "")
-	nycfare_2014_df.key=pd.to_datetime(nycfare_2014_df.key,format='%Y-%m-%d %H:%M:%S')
-	nycfare_2014_df['pickup_datetime']=nycfare_2014_df['pickup_datetime'].dt.tz_localize('UTC')
-	nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].dt.tz_convert('US/Eastern')`
   
   
+ ## Modeling
+ 
+      `from sklearn.model_selection import train_test_split
+
+	X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.2, random_state=42)
+	print(X_train.shape,y_train.shape,X_test.shape,y_test.shape)`
   
  ![Correlation Heatmap](Correlation Heatmap.png)
+ 
+ ### Model 1: XGBoost
+ 
+ - Accuracy (train data): 69%
+ - Accuracy (train data): 69%
+ - RMSE: 2.12
+
+ 
+ ### Model 2: MLR
+ 
+ - Accuracy (train data): 67%
+ - Accuracy (train data): 67%
+ - RMSE: 2.19
