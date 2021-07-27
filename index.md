@@ -73,15 +73,15 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
   
  ![Correlation Heatmap](Correlation Heatmap.png)
  
- ### Model 1: XGBoost
+### Model 1: XGBoost
  
  - Accuracy (train data): 69%
- - Accuracy (train data): 69%
+ - Accuracy (test data): 69%
  - RMSE: 2.12
 
  
- ### Model 2: MLR
+### Model 2: MLR
  
  - Accuracy (train data): 67%
- - Accuracy (train data): 67%
+ - Accuracy (test data): 67%
  - RMSE: 2.19
