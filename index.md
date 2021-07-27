@@ -40,17 +40,8 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 - Harversine Formula
  -Outliers
 
+![Missing Data](nulls.png) 
 
-`key                    0
-fare_amount            0
-pickup_datetime        0
-pickup_longitude       0
-pickup_latitude        0
-dropoff_longitude    376
-dropoff_latitude     376
-passenger_count        0
-dtype: int64
-`
 
 ### Fare Outlier Removal
 
