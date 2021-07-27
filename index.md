@@ -68,7 +68,9 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
   
   ![Correlation Heatmap](Correlation Heatmap.png)
   
- ## Modeling
+## Modeling & Anaysis
+ 
+ I used 80% of the data for train, 20% for test
  
       `from sklearn.model_selection import train_test_split
 
