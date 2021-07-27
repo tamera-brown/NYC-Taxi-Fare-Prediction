@@ -41,7 +41,8 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 - Outliers
 
 
-### Nulls
+
+### Missing Values
 
 ![Missing Data](nulls.PNG) 
 
@@ -87,7 +88,9 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 - Exarcted the weekday, date, hour, month from the pickup dataframe
   
   
-  ![Correlation Heatmap](Correlation Heatmap.png)
+ Correlation Heatmap ![Correlation Heatmap](Correlation Heatmap.png)
+ 
+ 
   
 ## Modeling & Anaysis
  
