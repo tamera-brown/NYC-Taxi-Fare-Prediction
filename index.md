@@ -34,11 +34,13 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 
 
 
+
+
 ### Fare Outlier Removal
 
 ![fare amount before](fare amount before.png)  ![fare amount after](fare amount after.png)
 
-#### Distance
+#### Calulate Distance
 
     `from haversine import haversine
     
