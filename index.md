@@ -38,7 +38,7 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 - Missing Values
 - Range for longitude and latitude coordinates
 - Harversine Formula
- -Outliers
+- Outliers
 
 ![Missing Data](nulls.PNG) 
 
@@ -58,6 +58,12 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
     	drop_off = (a2, b2)
     	return round(haversine(pick_up, drop_off,unit='mi'),2)`
 	
+	
+
+### Passenger Outlier Removal
+
+![passenger before](passenger before.png)  ![passenger after](passenger after.png)
+
 
 ### Fare Outlier Removal
 
@@ -70,10 +76,11 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 ![distance before](distance before.png)  ![distance after](distance after.png)
 
 
+
 ## Feature Engineering
 
 - Convert pickup dataframe from UTC to EST and account for daylight savings time
-- Exarcted the weekday, date, hour, month
+- Exarcted the weekday, date, hour, month from the pickup dataframe
   
   
   ![Correlation Heatmap](Correlation Heatmap.png)
