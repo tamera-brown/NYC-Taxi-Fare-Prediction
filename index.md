@@ -28,12 +28,15 @@ This project predicts the fare amount (inclusive of tolls) for a taxi ride in Ne
 ![Pipeline](Pipeline.png)
 
 
-## Data
+## Data Pre-Processing
 
 This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/overview) which contains 55M rows spanning over 7 years (2009-2015). I worked with the subset of that data with the year 2014, which has 8M rows.
 
 
 ## EDA
+- Missing Values
+- Range for longitude and latitude coordinates4
+
 
 
 ### Fare Outlier Removal
@@ -73,7 +76,8 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
  I used 80% of the data for train, 20% for test
  
       `from sklearn.model_selection import train_test_split
-
+	X = nycfare_2014_df[['passenger_count','month','date','hour','distance']]
+	y = nycfare_2014_df['fare_amount']
 	X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.2, random_state=42)
 	print(X_train.shape,y_train.shape,X_test.shape,y_test.shape)`
   
