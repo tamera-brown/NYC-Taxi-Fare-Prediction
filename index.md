@@ -33,15 +33,29 @@ This project predicts the fare amount (inclusive of tolls) for a taxi ride in Ne
 This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/overview) which contains 55M rows spanning over 7 years (2009-2015). I worked with the subset of that data with the year 2014, which has 8M rows.
 
 
+
 ## EDA
 - Missing Values
-- Range for longitude and latitude coordinates4
+- Range for longitude and latitude coordinates
+- Harversine Formula
+ -Outliers
 
 
+`key                    0
+fare_amount            0
+pickup_datetime        0
+pickup_longitude       0
+pickup_latitude        0
+dropoff_longitude    376
+dropoff_latitude     376
+passenger_count        0
+dtype: int64
+`
 
 ### Fare Outlier Removal
 
 ![fare amount before](fare amount before.png)  ![fare amount after](fare amount after.png)
+
 
 #### Calulate Distance
 
