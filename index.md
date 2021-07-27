@@ -40,7 +40,11 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 - Harversine Formula
 - Outliers
 
+
+### Nulls
+
 ![Missing Data](nulls.PNG) 
+
 
 
 #### Harversine Formula
