@@ -85,7 +85,7 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 ## Feature Engineering
 
 - Convert pickup dataframe from UTC to EST and account for daylight savings time
-- Exarcted the weekday, date, hour, month from the pickup dataframe
+- Extracted the weekday, date, hour, month from the pickup dataframe
 
 
   
