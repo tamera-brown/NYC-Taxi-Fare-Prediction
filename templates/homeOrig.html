@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  
+<div class="container" style="margin-top: 20px;">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2><b>Classification Analysis: Predict TitanicData</b></h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header text-center"><h5><b>House Price Data Input</b></h5></div>
+                        <form id="inputForm">
+                        <div class="card-body">                            
+                            <!-- <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Survived</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Survived" id="crimInputBoxId" value = "0">
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Pclass</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Pclass" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Age</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Age" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">SibSp</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="SibSp" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Parch</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Parch" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Fare</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Fare" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Gender</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Gender" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Q</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="Q" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">S</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="S" id="" value = "0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                Flexbox placeholder for Cooper
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type = "button" class="btn btn-info" onclick="getResult()" value = "submit" style="cursor: pointer;">Predict</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                    <div class="card-header text-center"><h5><b>Prediction Result</b></h5></div>
+                    <div class="card-body">
+                        <div class="row">
+                            Model Predicted Titanic Survival->&nbsp;&nbsp; <span style="color:red"><p id="result"></p></span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getResult(){
+        $("#progressBar").modal('show')
+        $.ajax({
+           type: "POST",
+           url: "{{url_for('getResponseLinearReg')}}",
+           data: $("#inputForm").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+              $("#result").html(data); 
+           },complete:function()
+           {
+            $("#progressBar").modal('hide')
+           }
+         });
+    }
+</script>
+
+{% endblock %}
