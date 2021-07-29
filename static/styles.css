@@ -8,11 +8,20 @@ body *{
 }
 
 .background{
-    width:150%;
-    position:absolute;
+    width:110%;
+    position:fixed;
     z-index:-1;
     opacity:.3;
-    background-repeat:repeat-y;
+    
+}
+
+#taxiImg{
+    position:fixed;
+    top: 200px;
+    left: 800px;
+   
+
+
 }
 
 
@@ -84,10 +93,31 @@ a.nav-link{
     background-color: #343a40;
 }
 
+.titleHeader{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
 .card{
     background:transparent;
 }
+label.control-label, .predict_text, .btn{
+    font-size: 20px;
+    font-weight: bold;
+}
 
+
+#month{
+    max-width:100%;
+    padding-top:8px;
+    padding-bottom:8px;
+    border-radius:4px;
+}
+
+.btn{
+    padding-right:40px;
+    padding-left:40px;
+}
 .footer{
     background-color:teal;
 }

@@ -22,7 +22,7 @@
                             
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label class="control-label">Passenger Count</label>
+                                    <label class="control-label"><b>Passenger Count</b></label>
                                 </div>
                                 <div class="col-md-9">
                                     <input class="form-control" type="text" name="passenger_count" id="" value = "" required>
@@ -30,20 +30,22 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label class="control-label">Month</label>
+                                    <label class="control-label"><b>Month</b></label>
                                 </div>
+                        
                                 <div class="col-md-9">
                                     <select id="month"  name="month" class="col-md-8 selects">
                                         <option value="Empty">----</option>
                                     </select>                            
                                 </div>
+                                
                                 <!-- <div class="col-md-9">
                                     <input class="form-control" type="text" name="month" id="" value = "" required>
                                 </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label class="control-label">Date</label>
+                                    <label class="control-label"><b>Date</b></label>
                                 </div>
                                 <div class="col-md-9">
                                     <input class="form-control" type="text" name="date" id="" value = "" required>
@@ -51,15 +53,16 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label class="control-label">Hour</label>
+                                    <label class="control-label"><b>Hour</b></label>
                                 </div>
                                 <div class="col-md-9">
                                     <input class="form-control" type="text" name="hour" id="" value = "" required>
+                                    <small>24 hour time</small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label class="control-label">Distance</label>
+                                    <label class="control-label"><b>Distance (miles)</b></label>
                                 </div>
                                 <div class="col-md-9">
                                     <input class="form-control" type="text" name="distance" id="" value = "" required>
@@ -80,7 +83,7 @@
                     <div class="card-header text-center"><h3><b>Prediction Result</b></h3></div>
                         <div class="card-body">
                             <div class="row predict_text">
-                                Model Predicted NYC Taxi Fare->&nbsp;&nbsp; <span style="color:red"><p id="result"></p></span>
+                                <b>Model Predicted NYC Taxi Fare-></b>&nbsp;&nbsp; <span style="color:red"><p id="result"></p></span>
                             </div>
                         </div>
                     </div>
