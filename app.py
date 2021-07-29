@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 import numpy as np
 import pickle
-import pandas as pd
 import listsML
 
 app = Flask(__name__)
