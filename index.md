@@ -48,20 +48,9 @@ This dataset include data from NYC Taxi Rides found on [Kaggle](https://www.kagg
 
 
 
-#### Harversine Formula
+#### Harversine Formuula
 
-    `from haversine import haversine
-    
-    def get_distance(df):
-        a1 = df['pickup_latitude']
-        a2 = df['dropoff_latitude']
-    
-    	b1 = df['pickup_longitude']
-    	b2 = df['dropoff_longitude']
-    
-    	pick_up = (a1, b1) 
-    	drop_off = (a2, b2)
-    	return round(haversine(pick_up, drop_off,unit='mi'),2)`
+![Haversine Formuula](haversine formula.png) 
 	
 	
 
