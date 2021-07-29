@@ -82,7 +82,7 @@ Latitude Boundary in train data
 
 ### Fare Outlier Removal
 
-![fare amount before](fare amount before.png)  ![fare amount after](fare amount after.png)
+![fare amount before](fare amount before.png)  ![fare amount after](fare_amount after.png)
 
 
 
