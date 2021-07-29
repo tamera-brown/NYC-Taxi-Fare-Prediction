@@ -100,7 +100,7 @@ Latitude Boundary in train data
 
   
   
- ![Correlation Heatmap](Correlation Heatmap.png)
+ ![Correlation Heatmap](downloa.png)
  
  
   
@@ -119,13 +119,13 @@ Latitude Boundary in train data
 
 ### Model 1: XGBoost Regressor
  
- - Accuracy (train data): 70%
+ - Accuracy (train data): 70%       					![distance before](XGB Res.png) 
  - Accuracy (test data): 70%
  - RMSE: 2.34
 
  
 ### Model 2: SLR
- 
+ 								    
  - Accuracy (train data): 54%
  - Accuracy (test data): 54%
  - RMSE: 2.88
