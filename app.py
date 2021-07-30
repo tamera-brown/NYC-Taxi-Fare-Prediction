@@ -19,7 +19,7 @@ for month in listsML.monthsList:
 
 @app.route('/getResponseLinearReg',methods=["GET","POST"])
 def getResponseLinearReg():
-    #Survived = request.form["Survived"]
+    
     passenger_count = int(request.form['passenger_count'])
     month = request.form['month']
     month = months_dict[month]
