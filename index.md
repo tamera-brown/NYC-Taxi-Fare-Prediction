@@ -6,6 +6,9 @@ By: Tamera Brown, Talent Path: D2
 This project predicts the fare amount (inclusive of tolls) for a taxi ride in New York City given the pickup and dropoff locations. 
 
 
+## Heroku Deployment
+
+[NYC Fare](https://nyc-taxi-fare-predict.herokuapp.com/)
 
 
 ## Technology Stack
