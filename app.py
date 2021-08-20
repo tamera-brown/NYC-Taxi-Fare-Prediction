@@ -29,7 +29,7 @@ def getResponseLinearReg():
     distance = float(request.form['distance'])
 
     inputList = [passenger_count,month,date,hour,distance]
-    with open('xgboost_nycfare2.sav', 'rb') as file:
+    with open('xgboost_nycfare.sav', 'rb') as file:
             pickle_model = pickle.load(file)
             y_pred_from_pkl = pickle_model.predict(np.array([inputList]))
            
