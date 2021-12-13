@@ -8,20 +8,11 @@ body *{
 }
 
 .background{
-    width:110%;
-    position:fixed;
-    z-index:-1;
-    opacity:.3;
-    
-}
-
-#taxiImg{
-    position:fixed;
-    top: 200px;
-    left: 800px;
+     background-image: url("../static/NYC_Taxi.PNG");
+    background-size: cover;
+    background-attachment: fixed;
    
-
-
+    
 }
 
 
@@ -33,7 +24,6 @@ body *{
     
     background: linear-gradient( #191c1f, #3a3c3d);
     line-height:1.5;
-    padding: .5rem 1rem;
     display:flex;
     
 }
