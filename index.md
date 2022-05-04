@@ -200,4 +200,4 @@ nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['
 
 ## Conclusion
 
-In conclusion, I have selected the Extreme Gradient Boosting Regressor as my candidate model as it provided me both high and consistent accuracy throughout both train and test data as well as provide a lowest RMSE score.
+In conclusion, I have selected the Extreme Gradient Boosting Regressor as my candidate model as it provided me with both high and consistent accuracy throughout both train and test data as well as provide the lowest RMSE score.
