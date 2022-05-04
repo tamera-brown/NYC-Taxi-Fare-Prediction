@@ -5,6 +5,15 @@ By: Tamera Brown, Talent Path: D2
 
 This project predicts the fare amount (inclusive of tolls) for a taxi ride in New York City given the pickup and dropoff locations. 
 
+## Objective
+
+My Objective is to create a set of models with the dataset I cleaned to achieve an accuracy score at least 70% with a low RMSE Score. I will then select a model and incorporate it into a small python application using flask.
+
+## Business Value
+
+With this model, a person that takes the taxi in New York City will be informed beforehand of the price of the trip, instead of being surprised at the end of the trip.
+
+
 
 ## Heroku Deployment
 
@@ -44,8 +53,6 @@ dropoff_longitude - float for longitude coordinate of where the taxi ride ended.
 dropoff_latitude - float for latitude coordinate of where the taxi ride ended.
 passenger_count - integer indicating the number of passengers in the taxi ride.
 fare_amount - float dollar amount of the cost of the taxi ride. 
-
-
 
 
 
@@ -106,8 +113,7 @@ nycfare_2014_df.pickup_datetime=pd.to_datetime(nycfare_2014_df.pickup_datetime,f
 nycfare_2014_df['key'] = nycfare_2014_df['key'].str.replace(" UTC", "")
 nycfare_2014_df.key=pd.to_datetime(nycfare_2014_df.key,format='%Y-%m-%d %H:%M:%S')
 nycfare_2014_df['pickup_datetime']=nycfare_2014_df['pickup_datetime'].dt.tz_localize('UTC')
-nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].dt.tz_convert('US/Eastern')
-`
+nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].dt.tz_convert('US/Eastern')`
 
 `nycfare_2014_df['date']=nycfare_2014_df.pickup_datetime.dt.day
 nycfare_2014_df['weekday']=nycfare_2014_df.pickup_datetime.dt.weekday
@@ -118,11 +124,12 @@ cal=calender()
 holidays=cal.holidays(start=nycfare_2014_df['pickup_datetime'].min(),end=nycfare_2014_df['pickup_datetime'].max())
 nycfare_2014_df['holiday']=nycfare_2014_df['pickup_datetime'].isin(holidays)
 nycfare_2014_df['holiday']=nycfare_2014_df['holiday'].map({False:0,True:1})
-nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['hour']<=20)).astype(int)
-`
+nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['hour']<=20)).astype(int)`
   
- ## Correlation Heatmap
+ 
   
+## Correlation Heatmap
+
  ![Correlation Heatmap](images/corr%20map.png)
  
  
@@ -189,3 +196,8 @@ nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['
 - RMSE: 2.36
 
 ![LGB Residuals](images/LGB%20res.png)
+
+
+## Conclusion
+
+In conclusion, I have selected the Extreme Gradient Boosting Regressor as my candidate model as it provided me both high and consistent accuracy throughout both train and test data as well as provide a lowest RMSE score.
