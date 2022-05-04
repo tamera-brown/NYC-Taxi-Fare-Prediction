@@ -121,7 +121,7 @@ nycfare_2014_df['holiday']=nycfare_2014_df['holiday'].map({False:0,True:1})
 nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['hour']<=20)).astype(int)
 `
   
-  ## Correlation Heatmap
+ ## Correlation Heatmap
   
  ![Correlation Heatmap](images/corr%20map.png)
  
