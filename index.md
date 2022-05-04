@@ -108,24 +108,24 @@ Latitude Boundary in train data
 - Convert pickup dataframe from UTC to EST and account for daylight savings time
 - Extracted the weekday, date, hour, month, hoilday, and rush hour from the pickup dataframe
 
-`nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].str.replace(" UTC", "")
-nycfare_2014_df.pickup_datetime=pd.to_datetime(nycfare_2014_df.pickup_datetime,format='%Y-%m-%d %H:%M:%S')
-nycfare_2014_df['key'] = nycfare_2014_df['key'].str.replace(" UTC", "")
-nycfare_2014_df.key=pd.to_datetime(nycfare_2014_df.key,format='%Y-%m-%d %H:%M:%S')
-nycfare_2014_df['pickup_datetime']=nycfare_2014_df['pickup_datetime'].dt.tz_localize('UTC')
-nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].dt.tz_convert('US/Eastern')`
+	`nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].str.replace(" UTC", "")
+	nycfare_2014_df.pickup_datetime=pd.to_datetime(nycfare_2014_df.pickup_datetime,format='%Y-%m-%d %H:%M:%S')
+	nycfare_2014_df['key'] = nycfare_2014_df['key'].str.replace(" UTC", "")
+	nycfare_2014_df.key=pd.to_datetime(nycfare_2014_df.key,format='%Y-%m-%d %H:%M:%S')
+	nycfare_2014_df['pickup_datetime']=nycfare_2014_df['pickup_datetime'].dt.tz_localize('UTC')
+	nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].dt.tz_convert('US/Eastern')`
 
-`nycfare_2014_df['date']=nycfare_2014_df.pickup_datetime.dt.day
-nycfare_2014_df['weekday']=nycfare_2014_df.pickup_datetime.dt.weekday
-nycfare_2014_df['hour'] = nycfare_2014_df.pickup_datetime.dt.hour
-nycfare_2014_df['minute'] = nycfare_2014_df.pickup_datetime.dt.minute
-nycfare_2014_df['month'] = nycfare_2014_df.pickup_datetime.dt.month
-cal=calender()
-holidays=cal.holidays(start=nycfare_2014_df['pickup_datetime'].min(),end=nycfare_2014_df['pickup_datetime'].max())
-nycfare_2014_df['holiday']=nycfare_2014_df['pickup_datetime'].isin(holidays)
-nycfare_2014_df['holiday']=nycfare_2014_df['holiday'].map({False:0,True:1})
-nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['hour']<=20)).astype(int)`
-  
+	`nycfare_2014_df['date']=nycfare_2014_df.pickup_datetime.dt.day
+	nycfare_2014_df['weekday']=nycfare_2014_df.pickup_datetime.dt.weekday
+	nycfare_2014_df['hour'] = nycfare_2014_df.pickup_datetime.dt.hour
+	nycfare_2014_df['minute'] = nycfare_2014_df.pickup_datetime.dt.minute
+	nycfare_2014_df['month'] = nycfare_2014_df.pickup_datetime.dt.month
+	cal=calender()
+	holidays=cal.holidays(start=nycfare_2014_df['pickup_datetime'].min(),end=nycfare_2014_df['pickup_datetime'].max())
+	nycfare_2014_df['holiday']=nycfare_2014_df['pickup_datetime'].isin(holidays)
+	nycfare_2014_df['holiday']=nycfare_2014_df['holiday'].map({False:0,True:1})
+	nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['hour']<=20)).astype(int)`
+
  
   
 ## Correlation Heatmap
