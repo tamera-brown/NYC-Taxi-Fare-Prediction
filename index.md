@@ -28,7 +28,7 @@ This project predicts the fare amount (inclusive of tolls) for a taxi ride in Ne
 
 ## Machine Learning Pipeline
 
-![Pipeline](Pipeline.png)
+![Pipeline](images/Pipeline.png)
 
 
 ## Data Pre-Processing
@@ -61,6 +61,7 @@ fare_amount - float dollar amount of the cost of the taxi ride.
 
 There were only 752 rows missing 
 
+![Nulls](/images/nulls.PNG)
 
 ## Ranges for coordinates
 
@@ -74,36 +75,55 @@ Latitude Boundary in train data
 
 #### Harversine Formuula
 
-![Haversine Formuula](haversine formula.png) 
+![Haversine Formuula](images/haversine%20formula.png) 
 	
 	
 
 ### Passenger Outlier Removal
 
-![passenger before](passenger before.png)  ![passenger after](passenger after.png)
+![passenger before](images/passenger%20before.png)  ![passenger after](images/passenger%20after.png)
 
 
 ### Fare Outlier Removal
 
-![fare amount before](fare amount before.png)  ![fare amount after](fare_amount after.png)
+![fare amount before](images/fare%20amount%20before.png)  ![fare amount after](images/fare_amount%20after.png)
 
 
 
 ### Distance Outlier Removal
 
-![distance before](distance before.png)  ![distance after](distance after.png)
+![distance before](images/distance%20before.png)  ![distance after](images/distance%20after.png)
 
 
 
 ## Feature Engineering
 
 - Convert pickup dataframe from UTC to EST and account for daylight savings time
-- Extracted the weekday, date, hour, month from the pickup dataframe
+- Extracted the weekday, date, hour, month, hoilday, and rush hour from the pickup dataframe
 
+`nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].str.replace(" UTC", "")
+nycfare_2014_df.pickup_datetime=pd.to_datetime(nycfare_2014_df.pickup_datetime,format='%Y-%m-%d %H:%M:%S')
+nycfare_2014_df['key'] = nycfare_2014_df['key'].str.replace(" UTC", "")
+nycfare_2014_df.key=pd.to_datetime(nycfare_2014_df.key,format='%Y-%m-%d %H:%M:%S')
+nycfare_2014_df['pickup_datetime']=nycfare_2014_df['pickup_datetime'].dt.tz_localize('UTC')
+nycfare_2014_df['pickup_datetime'] = nycfare_2014_df['pickup_datetime'].dt.tz_convert('US/Eastern')
+`
 
+`nycfare_2014_df['date']=nycfare_2014_df.pickup_datetime.dt.day
+nycfare_2014_df['weekday']=nycfare_2014_df.pickup_datetime.dt.weekday
+nycfare_2014_df['hour'] = nycfare_2014_df.pickup_datetime.dt.hour
+nycfare_2014_df['minute'] = nycfare_2014_df.pickup_datetime.dt.minute
+nycfare_2014_df['month'] = nycfare_2014_df.pickup_datetime.dt.month
+cal=calender()
+holidays=cal.holidays(start=nycfare_2014_df['pickup_datetime'].min(),end=nycfare_2014_df['pickup_datetime'].max())
+nycfare_2014_df['holiday']=nycfare_2014_df['pickup_datetime'].isin(holidays)
+nycfare_2014_df['holiday']=nycfare_2014_df['holiday'].map({False:0,True:1})
+nycfare_2014_df['rush_hour']=((nycfare_2014_df['hour']>=16) & (nycfare_2014_df['hour']<=20)).astype(int)
+`
   
+  ## Correlation Heatmap
   
- ![Correlation Heatmap](download.png)
+ ![Correlation Heatmap](images/corr%20map.png)
  
  
 
@@ -124,10 +144,11 @@ Latitude Boundary in train data
 
 ### Model 1: XGBoost Regressor
  
- - Accuracy (train data): 70%       					
- - Accuracy (test data): 70%
+ - Accuracy (train data): 70%       				
+ - Accuracy (test data): 70%                 
  - RMSE: 2.34
 
+![XGB Residuals](images/XGB%20Res.png)
  
 ### Model 2: SLR
  								    
@@ -135,17 +156,23 @@ Latitude Boundary in train data
  - Accuracy (test data): 54%
  - RMSE: 2.88
 
+![SLR Residuals](images/SLR%20res.png)
+
 ### Model 3: MLR
 
  - Accuracy (train data): 68%
  - Accuracy (test data): 68%
  - RMSE: 2.40
  
+ ![MLR Residuals](images/MLR%20res.png)
+
 ### Model 4: Ridge Regressor
 
 - Accuracy (train data): 54%
 - Accuracy (test data): 54%
 - RMSE: 2.88
+
+![Ridge Residuals](images/ridge%20res.png)
 
 ### Model 5: Lasso Regressor
 
@@ -153,8 +180,12 @@ Latitude Boundary in train data
 - Accuracy (test data): 54%
 - RMSE: 2.88
 
+![Lasso Residuals](images/Lasso%20res.png)
+
 ### Model 6: LGB Regressor
 
 - Accuracy (train data): 69%
 - Accuracy (test data): 69%
 - RMSE: 2.36
+
+![LGB Residuals](images/LGB%20res.png)
