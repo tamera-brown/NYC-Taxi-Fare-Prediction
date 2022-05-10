@@ -7,7 +7,7 @@ This project predicts the fare amount (inclusive of tolls) for a taxi ride in Ne
 
 ## Objective
 
-My Objective is to create a set of models with the dataset I cleaned to achieve an accuracy score at least 70% with a low RMSE Score. I will then select a model and incorporate it into a small python application using flask.
+My Objective is to create a set of models with the dataset I cleaned to achieve an accuracy score of at least 70% with a low RMSE Score. I will then select a model and incorporate it into a small python application using flask.
 
 ## Business Value
 
